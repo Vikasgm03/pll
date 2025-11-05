@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PRAMOD LIVELINE — Home</title>
+<style>
+
+/* === Base Styles (inline) === */
+* {{ box-sizing: border-box; }}
+html, body {{ margin:0; padding:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }}
+a {{ text-decoration: none; }}
+img {{ max-width: 100%; height: auto; display:block; }}
+
+.header {{ background:#0b5ed7; color:#fff; padding:12px 16px; position:sticky; top:0; z-index:10; }}
+.header .row {{ display:flex; align-items:center; justify-content:space-between; gap:12px; max-width:1100px; margin:0 auto; }}
+.brand {{ display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:.3px; }}
+.brand .logo {{ width:36px; height:36px; border-radius:10px; background:#fff; color:#0b5ed7; display:grid; place-items:center; font-weight:900; overflow:hidden; }}
+.brand .logo img {{ width:100%; height:100%; object-fit:cover; }}
+.header .nav a {{ color:#fff; margin-left:14px; font-weight:700; opacity:.95; }}
+.header .nav a:hover {{ opacity:1; text-decoration: underline; }}
+.small-link {{ font-size:12px; opacity:.9; text-decoration: underline; }}
+
+.container {{ max-width:1100px; margin:0 auto; padding:18px; }}
+.card {{ background:#fff; border-radius:16px; box-shadow:0 10px 25px rgba(0,0,0,.08); padding:18px; margin:18px 0; }}
+
+.grid {{ display:grid; gap:18px; }}
+.grid.two {{ grid-template-columns: 1fr 1fr; }}
+
+.btn {{ display:inline-block; border:none; border-radius:12px; padding:12px 16px; font-weight:800; cursor:pointer; }}
+.btn-blue {{ background:#0b5ed7; color:#fff; }}
+.btn-outline {{ background:#fff; color:#0b5ed7; outline:2px solid #0b5ed7; }}
+
+.meta {{ color:#475569; }}
+.price {{ color:#dc3545; font-weight:900; }}
+
+footer {{ text-align:center; padding:24px; color:#637082; }}
+
+@media (max-width: 900px) {{
+  .grid.two {{ grid-template-columns: 1fr; }}
+}}
+
+.hero { background: linear-gradient(180deg,#eaf2ff,#ffffff); border-bottom:1px solid #e6ecf8; }
+.hero .container { padding-top:32px; padding-bottom:18px; }
+.badge { background:#dc3545; color:#fff; padding:4px 10px; border-radius:999px; font-size:12px; font-weight:800; display:inline-block; margin-top:8px; }
+
+.bc-row { display:grid; grid-template-columns:1fr 160px; gap:16px; align-items:center; }
+.bc-logo { width:100%; height:100%; display:grid; place-items:center; background:#f2f6ff; border:2px dashed #c6d6ff; border-radius:12px; color:#0b5ed7; font-weight:900; }
+.bc-logo img { max-height:120px; }
+
+.jcb-row { display:grid; grid-template-columns: 1fr 1fr; gap:16px; align-items:center; }
+.jcb-left { display:grid; place-items:center; background:#fff3f3; border:1px dashed #ffd1d1; border-radius:12px; padding:12px; }
+.jcb-left .mini-logo { font-size:40px; }
+.jcb-right p { margin:.2rem 0; }
+
+.cow-row { display:grid; grid-template-columns: 1fr 1fr; gap:16px; align-items:center; }
+.cow-left { background:#eef7ff; border-radius:12px; padding:10px; display:grid; place-items:center; }
+.cow-left .mini-logo { font-size:40px; }
+
+.location a { display:inline-block; margin-top:8px; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="row">
+    <div class="brand">
+      <div class="logo" id="logoBox"><span id="logoInitials">PL</span><img id="logoImg" alt="" style="display:none"/></div>
+      <div>PRAMOD LIVELINE</div>
+    </div>
+    <div class="nav">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="profile.html">Profile</a>
+      <a href="#contact">Contact</a>
+      <a href="#" class="small-link" id="changeLogoLink">Change Logo</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Healthy Cows & Reliable JCB</h1>
+    <p class="meta">Simple pricing, quick response, and trusted service in Shravanabelagola, Hassan.</p>
+    <span class="badge">Blue • Red • White</span>
+  </div>
+</section>
+
+<main class="container">
+
+  <!-- Business Card Section -->
+  <section class="card">
+    <h2>Business Card</h2>
+    <div class="bc-row">
+      <div>
+        <p><b>PRAMOD LIVELINE</b></p>
+        <p class="meta">Cow Farm & JCB Service</p>
+        <p class="meta">Shravanabelagola, Hassan</p>
+        <div style="margin-top:8px;">
+          <a class="btn btn-blue" href="tel:7892125127">Call</a>
+          <a class="btn btn-outline" target="_blank" href="https://wa.me/7892125127">WhatsApp</a>
+        </div>
+      </div>
+      <div class="bc-logo">
+        <img id="headerLogoPreview" alt="Logo" src="" style="display:none;" />
+        <span id="logoFallback">🐄🚜</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- JCB Section (logo left, details right) -->
+  <section class="card">
+    <h2>JCB Service</h2>
+    <div class="jcb-row">
+      <div class="jcb-left">
+        <div class="mini-logo">🚜</div>
+        <div class="meta">Your earthwork partner</div>
+      </div>
+      <div class="jcb-right">
+        <p><b>Status:</b> Available</p>
+        <p><b>Rate:</b> ₹1000/hour</p>
+        <div style="margin-top:8px;">
+          <a class="btn btn-blue" target="_blank" href="https://wa.me/7892125127?text=Need%20JCB%20service%20at%20₹1000/hour">Book on WhatsApp</a>
+          <a class="btn btn-outline" href="tel:7892125127">Call</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cow Section -->
+  <section class="card">
+    <h2>Cows for Sale</h2>
+    <div class="cow-row">
+      <div class="cow-left">
+        <div class="mini-logo">🐄</div>
+      </div>
+      <div>
+        <p>• Fresh milk cow (sample)</p>
+        <p>• Good health, vaccinated</p>
+        <p>• Transparent pricing</p>
+        <div style="margin-top:8px;">
+          <a class="btn btn-blue" href="tel:7892125127">Call</a>
+          <a class="btn btn-outline" target="_blank" href="https://wa.me/7892125127?text=Interested%20in%20cow%20details">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location -->
+  <section class="card location">
+    <h2>Location</h2>
+    <p class="meta">Shravanabelagola, Hassan</p>
+    <a class="btn btn-blue" target="_blank" href="https://maps.google.com/?q=Shravanabelagola, Hassan">Open in Google Maps</a>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="card">
+    <h2>Contact</h2>
+    <p><b>Phone:</b> 7892125127</p>
+    <p><b>WhatsApp:</b> 7892125127</p>
+  </section>
+
+</main>
+
+<footer>© PRAMOD LIVELINE</footer>
+
+<!-- Inline logo changer (simple, no template literals) -->
+<input type="file" id="logoFile" accept="image/*" style="display:none" />
+<script>
+  (function() {
+    var changeLink = document.getElementById('changeLogoLink');
+    var fileInput = document.getElementById('logoFile');
+    var logoImg = document.getElementById('logoImg');
+    var logoInitials = document.getElementById('logoInitials');
+    var logoBox = document.getElementById('logoBox');
+    changeLink.addEventListener('click', function(e) { e.preventDefault(); fileInput.click(); });
+    fileInput.addEventListener('change', function(e) {
+      var file = e.target.files[0];
+      if(!file) return;
+      var reader = new FileReader();
+      reader.onload = function() {
+        logoImg.src = reader.result;
+        logoImg.style.display = 'block';
+        logoInitials.style.display = 'none';
+        logoBox.style.backgroundImage = 'url(' + reader.result + ')';
+        logoBox.style.backgroundSize = 'cover';
+        logoBox.style.backgroundPosition = 'center';
+      };
+      reader.readAsDataURL(file);
+    });
+  })();
+</script>
+
+</body>
+</html>
