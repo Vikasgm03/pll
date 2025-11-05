@@ -1,196 +1,366 @@
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PRAMOD LIVELINE — Home</title>
-<style>
-
-/* === Base Styles (inline) === */
-* {{ box-sizing: border-box; }}
-html, body {{ margin:0; padding:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }}
-a {{ text-decoration: none; }}
-img {{ max-width: 100%; height: auto; display:block; }}
-
-.header {{ background:#0b5ed7; color:#fff; padding:12px 16px; position:sticky; top:0; z-index:10; }}
-.header .row {{ display:flex; align-items:center; justify-content:space-between; gap:12px; max-width:1100px; margin:0 auto; }}
-.brand {{ display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:.3px; }}
-.brand .logo {{ width:36px; height:36px; border-radius:10px; background:#fff; color:#0b5ed7; display:grid; place-items:center; font-weight:900; overflow:hidden; }}
-.brand .logo img {{ width:100%; height:100%; object-fit:cover; }}
-.header .nav a {{ color:#fff; margin-left:14px; font-weight:700; opacity:.95; }}
-.header .nav a:hover {{ opacity:1; text-decoration: underline; }}
-.small-link {{ font-size:12px; opacity:.9; text-decoration: underline; }}
-
-.container {{ max-width:1100px; margin:0 auto; padding:18px; }}
-.card {{ background:#fff; border-radius:16px; box-shadow:0 10px 25px rgba(0,0,0,.08); padding:18px; margin:18px 0; }}
-
-.grid {{ display:grid; gap:18px; }}
-.grid.two {{ grid-template-columns: 1fr 1fr; }}
-
-.btn {{ display:inline-block; border:none; border-radius:12px; padding:12px 16px; font-weight:800; cursor:pointer; }}
-.btn-blue {{ background:#0b5ed7; color:#fff; }}
-.btn-outline {{ background:#fff; color:#0b5ed7; outline:2px solid #0b5ed7; }}
-
-.meta {{ color:#475569; }}
-.price {{ color:#dc3545; font-weight:900; }}
-
-footer {{ text-align:center; padding:24px; color:#637082; }}
-
-@media (max-width: 900px) {{
-  .grid.two {{ grid-template-columns: 1fr; }}
-}}
-
-.hero { background: linear-gradient(180deg,#eaf2ff,#ffffff); border-bottom:1px solid #e6ecf8; }
-.hero .container { padding-top:32px; padding-bottom:18px; }
-.badge { background:#dc3545; color:#fff; padding:4px 10px; border-radius:999px; font-size:12px; font-weight:800; display:inline-block; margin-top:8px; }
-
-.bc-row { display:grid; grid-template-columns:1fr 160px; gap:16px; align-items:center; }
-.bc-logo { width:100%; height:100%; display:grid; place-items:center; background:#f2f6ff; border:2px dashed #c6d6ff; border-radius:12px; color:#0b5ed7; font-weight:900; }
-.bc-logo img { max-height:120px; }
-
-.jcb-row { display:grid; grid-template-columns: 1fr 1fr; gap:16px; align-items:center; }
-.jcb-left { display:grid; place-items:center; background:#fff3f3; border:1px dashed #ffd1d1; border-radius:12px; padding:12px; }
-.jcb-left .mini-logo { font-size:40px; }
-.jcb-right p { margin:.2rem 0; }
-
-.cow-row { display:grid; grid-template-columns: 1fr 1fr; gap:16px; align-items:center; }
-.cow-left { background:#eef7ff; border-radius:12px; padding:10px; display:grid; place-items:center; }
-.cow-left .mini-logo { font-size:40px; }
-
-.location a { display:inline-block; margin-top:8px; }
-</style>
-</head>
-<body>
-
-<header class="header">
-  <div class="row">
-    <div class="brand">
-      <div class="logo" id="logoBox"><span id="logoInitials">PL</span><img id="logoImg" alt="" style="display:none"/></div>
-      <div>PRAMOD LIVELINE</div>
-    </div>
-    <div class="nav">
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="profile.html">Profile</a>
-      <a href="#contact">Contact</a>
-      <a href="#" class="small-link" id="changeLogoLink">Change Logo</a>
-    </div>
-  </div>
-</header>
-
-<section class="hero">
-  <div class="container">
-    <h1>Healthy Cows & Reliable JCB</h1>
-    <p class="meta">Simple pricing, quick response, and trusted service in Shravanabelagola, Hassan.</p>
-    <span class="badge">Blue • Red • White</span>
-  </div>
-</section>
-
-<main class="container">
-
-  <!-- Business Card Section -->
-  <section class="card">
-    <h2>Business Card</h2>
-    <div class="bc-row">
-      <div>
-        <p><b>PRAMOD LIVELINE</b></p>
-        <p class="meta">Cow Farm & JCB Service</p>
-        <p class="meta">Shravanabelagola, Hassan</p>
-        <div style="margin-top:8px;">
-          <a class="btn btn-blue" href="tel:7892125127">Call</a>
-          <a class="btn btn-outline" target="_blank" href="https://wa.me/7892125127">WhatsApp</a>
-        </div>
-      </div>
-      <div class="bc-logo">
-        <img id="headerLogoPreview" alt="Logo" src="" style="display:none;" />
-        <span id="logoFallback">🐄🚜</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- JCB Section (logo left, details right) -->
-  <section class="card">
-    <h2>JCB Service</h2>
-    <div class="jcb-row">
-      <div class="jcb-left">
-        <div class="mini-logo">🚜</div>
-        <div class="meta">Your earthwork partner</div>
-      </div>
-      <div class="jcb-right">
-        <p><b>Status:</b> Available</p>
-        <p><b>Rate:</b> ₹1000/hour</p>
-        <div style="margin-top:8px;">
-          <a class="btn btn-blue" target="_blank" href="https://wa.me/7892125127?text=Need%20JCB%20service%20at%20₹1000/hour">Book on WhatsApp</a>
-          <a class="btn btn-outline" href="tel:7892125127">Call</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Cow Section -->
-  <section class="card">
-    <h2>Cows for Sale</h2>
-    <div class="cow-row">
-      <div class="cow-left">
-        <div class="mini-logo">🐄</div>
-      </div>
-      <div>
-        <p>• Fresh milk cow (sample)</p>
-        <p>• Good health, vaccinated</p>
-        <p>• Transparent pricing</p>
-        <div style="margin-top:8px;">
-          <a class="btn btn-blue" href="tel:7892125127">Call</a>
-          <a class="btn btn-outline" target="_blank" href="https://wa.me/7892125127?text=Interested%20in%20cow%20details">WhatsApp</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Location -->
-  <section class="card location">
-    <h2>Location</h2>
-    <p class="meta">Shravanabelagola, Hassan</p>
-    <a class="btn btn-blue" target="_blank" href="https://maps.google.com/?q=Shravanabelagola, Hassan">Open in Google Maps</a>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="card">
-    <h2>Contact</h2>
-    <p><b>Phone:</b> 7892125127</p>
-    <p><b>WhatsApp:</b> 7892125127</p>
-  </section>
-
-</main>
-
-<footer>© PRAMOD LIVELINE</footer>
-
-<!-- Inline logo changer (simple, no template literals) -->
-<input type="file" id="logoFile" accept="image/*" style="display:none" />
-<script>
-  (function() {
-    var changeLink = document.getElementById('changeLogoLink');
-    var fileInput = document.getElementById('logoFile');
-    var logoImg = document.getElementById('logoImg');
-    var logoInitials = document.getElementById('logoInitials');
-    var logoBox = document.getElementById('logoBox');
-    changeLink.addEventListener('click', function(e) { e.preventDefault(); fileInput.click(); });
-    fileInput.addEventListener('change', function(e) {
-      var file = e.target.files[0];
-      if(!file) return;
-      var reader = new FileReader();
-      reader.onload = function() {
-        logoImg.src = reader.result;
-        logoImg.style.display = 'block';
-        logoInitials.style.display = 'none';
-        logoBox.style.backgroundImage = 'url(' + reader.result + ')';
-        logoBox.style.backgroundSize = 'cover';
-        logoBox.style.backgroundPosition = 'center';
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>Dr. Keerthi Shree Kirisave - Best Dietitian & Nutritionist in Basaveshwar Nagar, Bengaluru | IllWell Nutrition</title>
+    <meta name="description" content="Dr. Keerthi Shree Kirisave - Expert Clinical Nutritionist & Dietitian in Basaveshwar Nagar, Bengaluru. 16+ years experience. PhD in Yoga & Diabetes. Weight management, diabetes control, PCOS diet, thyroid nutrition. Book consultation: +91-9886717192" />
+    
+    <!-- Enhanced Keywords with Doctor Focus -->
+    <meta name="keywords" content="Dr Keerthi Shree Kirisave, clinical nutritionist Bengaluru, PhD diabetes nutrition, dietitian Basaveshwar Nagar, weight loss doctor Bangalore, diabetes dietitian, PCOS nutritionist, thyroid diet specialist, sports nutritionist Bengaluru, registered dietitian Bangalore, best nutritionist near me, diet consultation Bengaluru, nutrition counseling, weight management Basaveshwar Nagar, family nutritionist, child nutrition specialist, pregnancy dietitian Bengaluru, kidney diet specialist, liver diet counseling, cancer nutrition therapy, arthritis diet plan, heart healthy diet, cholesterol management diet, hypertension diet plan, behavioral nutrition therapy, detox diet counseling, clinical dietitian 16 years experience, Indian Dietetic Association member, TV9 nutrition expert, PublicTV dietitian, Suvarna News nutritionist, dietitian near Rajajinagar, nutritionist Mahalaxmi Layout, dietitian Vijayanagar, nutritionist Mathikere, dietitian Yeshwantpur, nutritionist Malleshwaram, dietitian Seshadripuram, nutritionist Shivaji Nagar" />
+    
+    <!-- Medical Professional Meta Tags -->
+    <meta name="medical.specialty" content="Clinical Nutrition and Dietetics" />
+    <meta name="medical.license" content="Registered Dietitian" />
+    <meta name="medical.experience" content="16+ years" />
+    <meta name="medical.education" content="PhD in Yoga and Diabetes, M.Sc. Food & Nutrition, B.Sc. Clinical Nutrition & Dietetics" />
+    
+    <!-- Local SEO Meta Tags -->
+    <meta name="geo.region" content="IN-KA" />
+    <meta name="geo.placename" content="Bengaluru, Karnataka, India" />
+    <meta name="geo.position" content="12.9716;77.5946" />
+    <meta name="ICBM" content="12.9716, 77.5946" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://illwell.com/" />
+    <meta property="og:title" content="Dr. Keerthi Shree Kirisave - Best Clinical Nutritionist & Dietitian in Bengaluru | IllWell" />
+    <meta property="og:description" content="16+ years experienced PhD Clinical Nutritionist in Bengaluru. Weight loss, diabetes, PCOS, thyroid diet plans. Featured on TV9, PublicTV. Book consultation: +91-9886717192" />
+    <meta property="og:image" content="https://illwell.com/src/assets/ksk1.jpeg" />
+    <meta property="og:image:alt" content="Dr. Keerthi Shree Kirisave - Clinical Nutritionist and Dietitian" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:site_name" content="IllWell Nutrition - Dr. Keerthi Shree Kirisave" />
+    <meta property="business:contact_data:phone_number" content="+919886717192" />
+    <meta property="business:contact_data:locality" content="Basaveshwar Nagar" />
+    <meta property="business:contact_data:region" content="Bengaluru" />
+    <meta property="business:contact_data:country_name" content="India" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://illwell.com/" />
+    <meta property="twitter:title" content="Dr. Keerthi Shree Kirisave - Clinical Nutritionist & Dietitian Bengaluru" />
+    <meta property="twitter:description" content="PhD Clinical Nutritionist, 16+ years experience. Weight loss, diabetes, PCOS diet specialist. Book consultation: +91-9886717192" />
+    <meta property="twitter:image" content="https://illwell.com/src/assets/ksk1.jpeg" />
+    <meta property="twitter:image:alt" content="Dr. Keerthi Shree Kirisave - Clinical Nutritionist" />
+    
+    <!-- Enhanced Structured Data for Medical Professional and Local Business -->
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "Physician",
+        "name": "Dr. Keerthi Shree Kirisave",
+        "givenName": "Keerthi Shree",
+        "familyName": "Kirisave",
+        "honorificPrefix": "Dr.",
+        "jobTitle": "Clinical Nutritionist and Dietitian",
+        "description": "PhD Clinical Nutritionist with 16+ years of experience specializing in therapeutic nutrition, weight management, diabetes care, PCOS treatment, and lifestyle disorders management.",
+        "url": "https://illwell.com",
+        "image": "https://illwell.com/src/assets/ksk1.jpeg",
+        "telephone": "+91-9886717192",
+        "email": "hello@illwell.com",
+        "medicalSpecialty": ["Clinical Nutrition", "Dietetics", "Diabetes Management", "Weight Management", "PCOS Treatment"],
+        "educationalCredentials": [
+          "PhD in Yoga and Diabetes - Yoga University of the Americas, Florida, USA (2019)",
+          "M.Sc. Food & Nutrition - Smt. V.H.D Central Institute of Home Science (2009)", 
+          "B.Sc. Clinical Nutrition & Dietetics - Smt. V.H.D Central Institute of Home Science (2007)"
+        ],
+        "yearsOfExperience": "16+",
+        "memberOf": [
+          {
+            "@type": "Organization",
+            "name": "Indian Dietetic Association",
+            "description": "Lifetime Member"
+          }
+        ],
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "PhD in Yoga and Diabetes",
+            "educationalLevel": "Doctorate",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "Yoga University of the Americas, Florida, USA"
+            }
+          }
+        ],
+        "worksFor": {
+          "@type": "MedicalOrganization",
+          "name": "IllWell Nutrition",
+          "url": "https://illwell.com"
+        },
+        "workLocation": {
+          "@type": "Place",
+          "name": "Vathsalya Speciality Clinic",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Ground Floor, Vathsalya Speciality Clinic, 565, beside post office, 3rd Stage 4th Block, Shakthi Ganapathi Nagar",
+            "addressLocality": "Basaveshwar Nagar",
+            "addressRegion": "Karnataka",
+            "postalCode": "560079",
+            "addressCountry": "IN"
+          }
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "550",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "review": [
+          {
+            "@type": "Review",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5"
+            },
+            "author": {
+              "@type": "Person",
+              "name": "Pranjal Goyal"
+            },
+            "reviewBody": "I felt very much comfortable while talking with them. She is friendly in nature and good behaviour while talking. Really I feel good while taking consultation with her."
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "MedicalBusiness",
+        "name": "IllWell Nutrition",
+        "alternateName": "IllWell - Dr. Keerthi Shree Kirisave",
+        "description": "Premier nutrition and dietetics clinic in Bengaluru providing expert clinical nutrition services, therapeutic diet planning, and wellness consultations by Dr. Keerthi Shree Kirisave, PhD Clinical Nutritionist.",
+        "url": "https://illwell.com",
+        "logo": "https://illwell.com/src/assets/illwell-logo.png",
+        "image": "https://illwell.com/src/assets/ksk1.jpeg",
+        "telephone": "+91-9886717192",
+        "email": "hello@illwell.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Ground Floor, Vathsalya Speciality Clinic, 565, beside post office, 3rd Stage 4th Block, Shakthi Ganapathi Nagar",
+          "addressLocality": "Basaveshwar Nagar",
+          "addressRegion": "Karnataka",
+          "postalCode": "560079",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "12.9716",
+          "longitude": "77.5946"
+        },
+        "openingHours": ["Mo-Sa 09:00-18:00"],
+        "priceRange": "₹₹",
+        "paymentAccepted": ["Cash", "Credit Card", "UPI", "Online Transfer"],
+        "currenciesAccepted": "INR",
+        "serviceArea": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": "12.9716",
+            "longitude": "77.5946"
+          },
+          "geoRadius": "50000"
+        },
+        "medicalSpecialty": ["Clinical Nutrition", "Dietetics", "Diabetes Management", "Weight Management", "PCOS Treatment", "Thyroid Nutrition", "Sports Nutrition"],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Clinical Nutrition Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "name": "Weight Management Program",
+              "description": "Personalized weight loss and weight gain programs with sustainable lifestyle modifications",
+              "category": "Weight Management"
+            },
+            {
+              "@type": "Offer", 
+              "name": "Diabetes Nutrition Care",
+              "description": "Evidence-based therapeutic nutrition for Type 1 and Type 2 diabetes management",
+              "category": "Diabetes Care"
+            },
+            {
+              "@type": "Offer",
+              "name": "PCOS Diet Planning",
+              "description": "Hormone-balancing nutrition therapy for PCOS and reproductive health",
+              "category": "Hormonal Health"
+            },
+            {
+              "@type": "Offer",
+              "name": "Thyroid Nutrition Therapy",
+              "description": "Specialized nutrition for hypothyroid and hyperthyroid conditions",
+              "category": "Endocrine Health"
+            },
+            {
+              "@type": "Offer",
+              "name": "Sports Nutrition",
+              "description": "Performance optimization nutrition for athletes and fitness enthusiasts",
+              "category": "Sports Medicine"
+            },
+            {
+              "@type": "Offer",
+              "name": "Pediatric Nutrition",
+              "description": "Specialized nutrition planning for healthy growth and development in children",
+              "category": "Child Health"
+            },
+            {
+              "@type": "Offer",
+              "name": "Pregnancy Nutrition",
+              "description": "Pre and post-natal nutritional care for maternal and infant health",
+              "category": "Maternal Health"
+            }
+          ]
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "550",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Dr. Keerthi Shree Kirisave",
+          "jobTitle": "Clinical Nutritionist and Dietitian"
+        },
+        "employee": {
+          "@type": "Person",
+          "name": "Dr. Keerthi Shree Kirisave",
+          "jobTitle": "Clinical Nutritionist and Dietitian"
+        }
+      }
+    ]
+    </script>
+    
+    <!-- Performance Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="//widget.practo.com">
+    
+    <!-- Favicon and Icons -->
+    <link rel="icon" type="image/svg+xml" href="/assets/images/illwell-logo-simple-w-0PyBT8.svg" />
+    <link rel="apple-touch-icon" href="/assets/images/illwell-logo-simple-w-0PyBT8.svg" />
+    
+    <!-- Enhanced Canonical and Alternate URLs -->
+    <link rel="canonical" href="https://illwell.com/" />
+    <link rel="alternate" hreflang="en-in" href="https://illwell.com/" />
+    <link rel="alternate" hreflang="en" href="https://illwell.com/" />
+    
+    <!-- Sitemap Reference -->
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    
+    <!-- Additional SEO Tags -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow" />
+    <meta name="author" content="Dr. Keerthi Shree Kirisave, IllWell Nutrition" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="rating" content="general" />
+    <meta name="distribution" content="global" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="MobileOptimized" content="width" />
+    
+    <!-- Professional and Medical SEO -->
+    <meta name="specialty" content="Clinical Nutrition, Dietetics, Diabetes Management, Weight Management" />
+    <meta name="practitioner" content="Dr. Keerthi Shree Kirisave" />
+    <meta name="experience" content="16 years" />
+    <meta name="qualification" content="PhD, M.Sc, B.Sc Clinical Nutrition" />
+    <meta name="location" content="Basaveshwar Nagar, Bengaluru, Karnataka, India" />
+    <meta name="phone" content="+91-9886717192" />
+    
+    <!-- Additional Local SEO -->
+    <meta name="city" content="Bengaluru" />
+    <meta name="state" content="Karnataka" />
+    <meta name="country" content="India" />
+    <meta name="locality" content="Basaveshwar Nagar" />
+    <meta name="region" content="South India" />
+    
+    <!-- Content Classification -->
+    <meta name="subject" content="Clinical Nutrition, Dietetics, Health, Wellness, Medical Consultation" />
+    <meta name="topic" content="Nutrition Consultation, Diet Planning, Weight Management, Diabetes Care" />
+    <meta name="summary" content="Dr. Keerthi Shree Kirisave provides expert clinical nutrition and dietetics services in Bengaluru with 16+ years of experience and PhD qualification." />
+    <meta name="classification" content="Healthcare, Medical Services, Nutrition, Wellness" />
+    <meta name="url" content="https://illwell.com" />
+    <meta name="identifier-URL" content="https://illwell.com" />
+    <meta name="directory" content="submission" />
+    <meta name="pagename" content="IllWell Nutrition - Dr. Keerthi Shree Kirisave" />
+    <meta name="category" content="Healthcare, Medical, Nutrition, Dietetics, Wellness" />
+    <meta name="coverage" content="Worldwide" />
+    <meta name="target" content="all" />
+    <meta name="audience" content="all" />
+    <meta name="copyright" content="IllWell Nutrition" />
+    
+    <!-- Practo Widget Script with Enhanced Loading -->
+    <script>
+      // Enhanced Practo widget configuration
+      window.practoWidgetConfig = {
+        widgetId: '730f3d28f57854f8',
+        retryAttempts: 5,
+        retryDelay: 100,
+        fastInit: true
       };
-      reader.readAsDataURL(file);
-    });
-  })();
-</script>
+      
+      // Load script with better error handling
+      (function() {
+        var script = document.createElement('script');
+        script.src = 'https://www.practo.com/bundles/practopractoapp/js/abs_widget_helper.js';
+        script.async = true;
+        script.onload = function() {
+          console.log('Practo widget script loaded successfully');
+          // Initialize widgets after script loads
+          if (window.practoWidgetHelper && window.practoWidgetHelper.init) {
+            window.practoWidgetHelper.init();
+          }
+        };
+        script.onerror = function() {
+          console.error('Failed to load Practo widget script');
+        };
+        document.head.appendChild(script);
+      })();
+    </script>
+    
+    <!-- Critical CSS for Above-the-Fold Content -->
+    <style>
+      /* Critical styles for fastest initial render */
+      body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+      .app-container { min-height: 100vh; }
+      .navbar { position: fixed; top: 0; width: 100%; z-index: 1000; background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+      .hero-section { padding-top: 80px; min-height: 100vh; display: flex; align-items: center; }
+      .loading-spinner { display: flex; justify-content: center; align-items: center; height: 100vh; }
+    </style>
+    
+    <!-- Resource Hints for Better Performance -->
+    <link rel="modulepreload" href="data:text/jsx;base64,aW1wb3J0IHsgU3RyaWN0TW9kZSB9IGZyb20gJ3JlYWN0Jw0KaW1wb3J0IHsgY3JlYXRlUm9vdCB9IGZyb20gJ3JlYWN0LWRvbS9jbGllbnQnDQppbXBvcnQgJy4vaW5kZXguY3NzJw0KaW1wb3J0IEFwcCBmcm9tICcuL0FwcC5qc3gnDQoNCmNyZWF0ZVJvb3QoZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3Jvb3QnKSkucmVuZGVyKA0KICA8U3RyaWN0TW9kZT4NCiAgICA8QXBwIC8+DQogIDwvU3RyaWN0TW9kZT4sDQopDQo=" />
+    <link rel="modulepreload" href="/assets/App-Cu1tG850.jsx" />
+    <link rel="preload" href="/assets/images/illwell-logo-DQAAfMbo.png" as="image" type="image/png" />
+    <link rel="preload" href="/assets/images/gm-CX7yBUqb.png" as="image" type="image/png" />
+    <link rel="preload" href="/assets/images/pct-C8Qrhxdp.png" as="image" type="image/png" />
+    
+    <!-- Service Worker for Caching -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+              console.log('SW registered: ', registration);
+            })
+            .catch(function(registrationError) {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/js/index-CPSzJS2V.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/js/vendor-6ULW7vKx.js">
+    <link rel="modulepreload" crossorigin href="/assets/js/react-vendor-cKrL2D7t.js">
+    <link rel="stylesheet" crossorigin href="/assets/styles/index-BYkDWo8x.css">
+  </head>
+  <body>
+    <div id="root"></div>
 
-</body>
+  </body>
 </html>
