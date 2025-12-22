@@ -1,28 +1,36 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #fde2e4, #e0f4ff);
-  height: 100vh;
+  background: linear-gradient(135deg, #ffd6e0, #cce7ff);
   overflow: hidden;
 }
 
-.page {
-  display: none;
+.hidden { display: none; }
+
+#loader {
   height: 100vh;
-  padding: 30px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 }
 
-.page.active {
+#app {
+  height: 100vh;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-h1 {
-  font-weight: 500;
-  line-height: 1.5;
+.card {
+  display: none;
+  text-align: center;
+  padding: 30px;
+  animation: fade 1s ease;
+}
+
+.card.active {
+  display: block;
 }
 
 .big {
@@ -30,25 +38,33 @@ h1 {
 }
 
 button {
-  margin-top: 25px;
-  padding: 12px 22px;
+  margin-top: 20px;
+  padding: 12px 24px;
   border: none;
-  border-radius: 25px;
-  background: #ff8fab;
+  border-radius: 30px;
+  background: #ff7aa2;
   color: white;
   font-size: 1rem;
   cursor: pointer;
 }
 
 button:hover {
-  background: #ff7096;
+  background: #ff5c8a;
 }
 
-p {
-  opacity: 0.9;
+.floating {
+  position: absolute;
+  font-size: 2rem;
+  animation: float 8s infinite linear;
+  opacity: 0.3;
 }
 
-small {
-  margin-top: 20px;
-  opacity: 0.6;
+@keyframes fade {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  from { transform: translateY(100vh); }
+  to { transform: translateY(-100vh); }
 }
