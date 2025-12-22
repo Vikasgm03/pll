@@ -2,43 +2,56 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hey You 🎈</title>
+  <title>Hey You 🎂</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<section class="page active">
-  <h1 class="type">Hey you 🙂<br>Yes… you.<br>Today’s a little special.</h1>
-  <button onclick="nextPage()">Tap gently</button>
-</section>
+<div id="loader">
+  <h2>Preparing birthday magic… ✨</h2>
+  <p id="loadText">0%</p>
+</div>
 
-<section class="page">
-  <h1>
-    Happy Birthday to the girl<br>
-    who loves sleep more than replying fast 😴<br><br>
-    Still… somehow replies just enough<br>
-    to make people smile.
-  </h1>
-  <button onclick="nextPage()">Wait… one more</button>
-</section>
+<div id="app" class="hidden">
 
-<section class="page">
-  <h1>
-    This page isn’t loud.<br>
-    Just like you.<br><br>
-    Calm. Comfortable.<br>
-    Nice to be around.
-  </h1>
-  <p>I hope today treats you kindly.</p>
-  <button onclick="nextPage()">Final thing</button>
-</section>
+  <div class="floating">🎂 😴 ✨ 💖 🎉</div>
 
-<section class="page">
-  <h1 class="big">Happy Birthday 🎂</h1>
-  <p>No pressure. No expectations.<br>
-     Just wishing you a genuinely good day ✨</p>
-  <small>You can smile now. Mission accomplished 🙂</small>
-</section>
+  <section class="card active">
+    <h1 class="type"></h1>
+    <button onclick="nextCard()">Tap gently 🙂</button>
+  </section>
+
+  <section class="card">
+    <h1>
+      Happy Birthday to the girl<br>
+      who loves sleep more than replying fast 😴
+    </h1>
+    <p>(No judgement. It’s cute.)</p>
+    <button onclick="nextCard()">Next surprise 👀</button>
+  </section>
+
+  <section class="card">
+    <h1>
+      If comfort was a person,<br>
+      it would probably be you.
+    </h1>
+    <button onclick="showSecret()">Don’t click this 👀</button>
+    <p id="secret" class="hidden">
+      Okay fine… I hope you smile today. A lot 😌
+    </p>
+    <button onclick="nextCard()">Final thing ✨</button>
+  </section>
+
+  <section class="card">
+    <h1 class="big">Happy Birthday 🎉</h1>
+    <p>
+      No pressure. No expectations.<br>
+      Just good vibes, cake & sleep 😴
+    </p>
+    <button onclick="confetti()">Celebrate 🎊</button>
+  </section>
+
+</div>
 
 <script src="script.js"></script>
 </body>
