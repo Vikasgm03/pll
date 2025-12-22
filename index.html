@@ -1,54 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Hey You 🎂</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>For You 🎂</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+<!-- Loader -->
 <div id="loader">
-  <h2>Preparing birthday magic… ✨</h2>
-  <p id="loadText">0%</p>
+  <h2>Preparing something special… ✨</h2>
+  <p id="percent">0%</p>
 </div>
 
+<!-- Music -->
+<audio id="bgm" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- App -->
 <div id="app" class="hidden">
 
-  <div class="floating">🎂 😴 ✨ 💖 🎉</div>
+  <div class="floating">
+    🎂 😴 ✨ 💖 🎉 💫
+  </div>
 
+  <!-- CARD 1 -->
   <section class="card active">
-    <h1 class="type"></h1>
-    <button onclick="nextCard()">Tap gently 🙂</button>
+    <h1 id="type"></h1>
+    <button onclick="next()">Tap gently 🙂</button>
   </section>
 
+  <!-- CARD 2 -->
   <section class="card">
     <h1>
-      Happy Birthday to the girl<br>
-      who loves sleep more than replying fast 😴
+      Happy Birthday to the girl <br>
+      who loves sleep more than replying 😴
     </h1>
-    <p>(No judgement. It’s cute.)</p>
-    <button onclick="nextCard()">Next surprise 👀</button>
+    <p>(Still cute though)</p>
+    <button onclick="next()">Next 👀</button>
   </section>
 
+  <!-- CARD 3 -->
   <section class="card">
     <h1>
-      If comfort was a person,<br>
-      it would probably be you.
+      If comfort had a name…<br>
+      it would be <span class="name">YOU</span>.
     </h1>
-    <button onclick="showSecret()">Don’t click this 👀</button>
+    <small class="secret-btn" onclick="reveal()">
+      don’t tap this 👀
+    </small>
     <p id="secret" class="hidden">
       Okay fine… I hope you smile today. A lot 😌
     </p>
-    <button onclick="nextCard()">Final thing ✨</button>
+    <button onclick="next()">One last thing ✨</button>
   </section>
 
+  <!-- CARD 4 (Mini Game) -->
+  <section class="card">
+    <h1>Catch the cake 🎂</h1>
+    <div id="game" onclick="score()">🎂</div>
+    <p>Score: <span id="count">0</span></p>
+    <button onclick="next()">Done 😄</button>
+  </section>
+
+  <!-- FINAL -->
   <section class="card">
     <h1 class="big">Happy Birthday 🎉</h1>
-    <p>
-      No pressure. No expectations.<br>
-      Just good vibes, cake & sleep 😴
-    </p>
+    <p id="timeMsg"></p>
     <button onclick="confetti()">Celebrate 🎊</button>
+    <small>You can smile now 🙂</small>
   </section>
 
 </div>
